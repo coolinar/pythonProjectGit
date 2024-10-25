@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432f3396-5978-4261-84e5-1e152b2e5c56" name="Changes" comment="" />
+    <list default="true" id="020543e2-cc29-4392-9dd1-1411696ef63f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,9 +45,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Admin/PycharmProjects/pythonProjectGit"
+    "last_opened_file_path": "C:/Users/Admin/PycharmProjects/pythonProjectGit",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -58,7 +61,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="432f3396-5978-4261-84e5-1e152b2e5c56" name="Changes" comment="" />
+      <changelist id="020543e2-cc29-4392-9dd1-1411696ef63f" name="Changes" comment="" />
       <created>1727817869505</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
