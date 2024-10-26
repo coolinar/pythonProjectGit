@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher, types, F
 from dotenv import load_dotenv
 import os
 import asyncio
-from notifications import send_notification  # Импортируем функцию отправки уведомлений
+from notifications import send_notification  # Убедитесь, что этот импорт корректен
 
 # Загружаем переменные окружения из .env
 load_dotenv()
@@ -17,7 +17,7 @@ async def start_handler(message: types.Message):
 
 @dp.message(F.command("notify"))
 async def notify_handler(message: types.Message):
-    # Здесь можно отправить уведомление, вызывая функцию send_notification
+    # Здесь вызываем функцию отправки уведомления
     await send_notification(message)
 
 async def main():
