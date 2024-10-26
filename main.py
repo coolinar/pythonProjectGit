@@ -1,27 +1,36 @@
-from aiogram import Bot, Dispatcher, types, F
-from dotenv import load_dotenv
 import os
 import asyncio
-from notifications import send_notification  # Убедитесь, что этот импорт корректен
+from aiogram import Bot, Dispatcher, types
+from aiogram.filters import Command
+from dotenv import load_dotenv
 
 # Загружаем переменные окружения из .env
 load_dotenv()
 API_TOKEN = os.getenv('API_TOKEN')
 
+# Инициализация бота и диспетчера
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
 
-@dp.message(F.command("start"))
+@dp.message(Command("start"))  # Исправленный фильтр
 async def start_handler(message: types.Message):
     await message.reply("Привет! Я бот для уведомлений. Введите /notify, чтобы отправить уведомление.")
 
-@dp.message(F.command("notify"))
+@dp.message(Command("notify"))
 async def notify_handler(message: types.Message):
-    # Здесь вызываем функцию отправки уведомления
-    await send_notification(message)
+    # Здесь можно добавить логику отправки уведомления
+    await send_notification(message.from_user.id)
+
+async def send_notification(user_id: int):
+    # Логика отправки уведомления
+    notification_message = "Это ваше уведомление!"
+    await bot.send_message(chat_id=user_id, text=notification_message)
 
 async def main():
-    await dp.start_polling(bot)
+    try:
+        await dp.start_polling(bot)
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())
