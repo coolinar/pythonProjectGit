@@ -1,7 +1,8 @@
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher, types, F
 from dotenv import load_dotenv
 import os
 import asyncio
+from notifications import send_notification  # Импортируем функцию отправки уведомлений
 
 # Загружаем переменные окружения из .env
 load_dotenv()
@@ -10,9 +11,14 @@ API_TOKEN = os.getenv('API_TOKEN')
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
 
-@dp.message(commands=["start"])
+@dp.message(F.command("start"))
 async def start_handler(message: types.Message):
     await message.reply("Привет! Я бот для уведомлений. Введите /notify, чтобы отправить уведомление.")
+
+@dp.message(F.command("notify"))
+async def notify_handler(message: types.Message):
+    # Здесь можно отправить уведомление, вызывая функцию send_notification
+    await send_notification(message)
 
 async def main():
     await dp.start_polling(bot)
